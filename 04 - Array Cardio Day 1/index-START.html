@@ -105,12 +105,14 @@
     console.groupCollapsed('Sum up the instances of each of these');
     const copyData = data
       .slice()
-      .reduce((array, current) => {
-        if (!array.includes(current)) {
-          array.push(current);
+      .reduce((object, current) => {
+        if (!(current in object)) {
+          object[current] = 0;
         }
-        return array;
-      }, []);
+        object[current]++;
+
+        return object;
+      }, {});
     
     console.table(copyData);
     console.groupEnd();
