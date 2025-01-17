@@ -57,7 +57,7 @@
     console.groupCollapsed('Sort the inventors by birthdate, oldest to youngest')
     const inventorsSortByBirthDesc = inventors
       .slice()
-      .sort((inventorA, inventorB) =>  inventorA.year - inventorB.year)
+      .sort((inventorA, inventorB) => inventorB.year - inventorA.year)
       .reverse()
     console.table(inventorsSortByBirthDesc);
     console.groupEnd();
